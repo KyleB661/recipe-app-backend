@@ -8,6 +8,7 @@ const logger = require('morgan');
 const testJwtRouter = require('./controllers/test-jwt')
 const authRouter = require('./controllers/auth')
 const usersRouter = require('./controllers/users')
+const recipesRouter = require('./controllers/recipe.js')
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -21,11 +22,7 @@ app.use(logger('dev'));
 app.use('/auth', authRouter)
 app.use('/test-jwt', testJwtRouter)
 app.use('/users', usersRouter)
-
-
-// app.get('/', (req, res) => {
-//   res.json({ message: 'Welcome to the Recipe App API' });
-// });
+app.use('/recipes', recipesRouter)
 
 app.listen(3000, () => {
   console.log('The express app is ready!');
