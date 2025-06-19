@@ -26,7 +26,8 @@ app.use('/auth', authRouter)
 app.use('/test-jwt', testJwtRouter)
 app.use('/users', usersRouter)
 app.use('/recipes', recipesRouter)
+PORT = process.env.PORT
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('The express app is ready!');
 });
