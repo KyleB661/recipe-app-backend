@@ -17,7 +17,7 @@ mongoose.connection.on('connected', () => {
 });
 
 app.use(cors({
-  origin: "https://frolicking-sherbet-e005dc.netlify.app/",
+  origin: "https://frolicking-sherbet-e005dc.netlify.app",
   credentials: true,
 }));
 app.use(express.json());
